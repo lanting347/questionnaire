@@ -11,7 +11,7 @@
  Target Server Version : 50639
  File Encoding         : 65001
 
- Date: 13/05/2021 00:48:11
+ Date: 13/05/2021 21:53:26
 */
 
 SET NAMES utf8mb4;
@@ -76,15 +76,13 @@ CREATE TABLE `questionnaire` (
   `title` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `username` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`questionnaire_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- ----------------------------
 -- Records of questionnaire
 -- ----------------------------
 BEGIN;
 INSERT INTO `questionnaire` VALUES (1, '2021-05-12 11:41:25.544000', '回答有奖', NULL, 1, NULL, 'collecting', '你爱吃什么?', 'admin');
-INSERT INTO `questionnaire` VALUES (2, '2021-05-12 11:46:23.696000', '请输入描述', NULL, NULL, NULL, 'editing', '请输入标题', 'admin');
-INSERT INTO `questionnaire` VALUES (3, '2021-05-12 11:46:33.712000', '请输入描述', NULL, NULL, NULL, 'editing', '请输入标题', 'admin');
 COMMIT;
 
 -- ----------------------------
