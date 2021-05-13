@@ -62,8 +62,8 @@
                 loading: false,
                 vcUrl: '/verifyCode?time=' + new Date(),
                 loginForm: {
-                    username: 'user',
-                    password: '123',
+                    username: '',
+                    password: '',
                 },
                 registerForm: {
                     username: '',
