@@ -33,8 +33,10 @@ public class AnalysisServiceImpl implements AnalysisService {
     }
 
     @Override
+    @Transactional
     public String getQuestionnairesByUsername(String username) {
         JsonObject res = new JsonObject();
+        questionnaireDao.deleteByTitle("请输入标题");
         res.add("questionnaires", gson.fromJson(gson.toJson(questionnaireDao.findAllByUsername(username)), JsonArray.class));
         return gson.toJson(res);
     }
@@ -108,12 +110,12 @@ public class AnalysisServiceImpl implements AnalysisService {
             valueList.sort((a, b) -> (int) (a - b));
             System.out.println(valueList);
 
-            if(valueList.size()==0){
+            if (valueList.size() == 0) {
                 resValueMap.put("最大值", 0.0);
                 resValueMap.put("最小值", 0.0);
                 resValueMap.put("平均值", 0.0);
                 resValueMap.put("中位数", 0.0);
-            }else{
+            } else {
                 resValueMap.put("最大值", valueList.get(valueList.size() - 1));
                 resValueMap.put("最小值", valueList.get(0));
                 resValueMap.put("平均值", sum / valueList.size());
